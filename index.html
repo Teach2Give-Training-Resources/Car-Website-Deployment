@@ -12,7 +12,16 @@
 <body>
     <header>
         <nav>
-            <ul class="nav-links">
+            <div class="nav-container">
+
+                <div class="burger" id="burger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="close" id="close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+            <ul class="nav-links" id="navLinks">
                 <div class="logo">
                     <img src="./images/logo.jpg" alt="logo">
                 </div>
@@ -20,7 +29,6 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-
             </ul>
         </nav>
     </header>
@@ -59,6 +67,38 @@
         </section>
     </main>
 
+    <!-- <script>
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('navLinks');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script> -->
+
+    <script>
+        const burger = document.getElementById('burger');
+        const close = document.getElementById('close');
+        const navLinks = document.getElementById('navLinks');
+
+        // Show the menu and hide the burger icon
+        burger.addEventListener('click', () => {
+            navLinks.classList.add('show');
+            burger.style.display = 'none';
+            close.style.display = 'block';
+        });
+
+        // Hide the menu and show the burger icon
+        close.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            burger.style.display = 'block';
+            close.style.display = 'none';
+        });
+
+        // Ensure the close icon is hidden by default
+        close.style.display = 'none';
+    
+    </script>
 
 </body>
 
